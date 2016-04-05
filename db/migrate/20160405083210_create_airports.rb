@@ -5,6 +5,7 @@ class CreateAirports < ActiveRecord::Migration
       t.string :city
       t.string :country
       t.string :country_code
+      t.string :continent
       t.decimal :coordinate_x, :precision => 10, :scale => 6
       t.decimal :coordinate_y, :precision => 10, :scale => 6
       t.timestamps null: false

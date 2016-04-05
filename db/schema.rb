@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405123819) do
+ActiveRecord::Schema.define(version: 20160405193318) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "code"
     t.string   "city"
     t.string   "country"
     t.string   "country_code"
+    t.string   "continent"
     t.decimal  "coordinate_x", precision: 10, scale: 6
     t.decimal  "coordinate_y", precision: 10, scale: 6
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.string   "continent"
   end
 
 end
