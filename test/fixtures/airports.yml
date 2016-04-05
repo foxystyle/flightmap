@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  city: MyString
+  country: MyString
+  country_code: MyString
+  coordinate_x: 9.99
+  coordinate_y: 9.99
+
+two:
+  code: MyString
+  city: MyString
+  country: MyString
+  country_code: MyString
+  coordinate_x: 9.99
+  coordinate_y: 9.99
