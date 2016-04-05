@@ -1,28 +1,15 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Done
 
-Things you may want to cover:
+[x] Airport model
+[x] Airport csv reader
+  [x] user provided headers
+  [x] "tt" separation regex
+[x] Airport database migration
+[x] Airport database seed
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Next to do
+[ ] Tickets model
+[ ] Tickets csv reader
+[ ] Tickets database migration
+[ ] Tickets database seed
