@@ -48,3 +48,5 @@
 - [ ] Tickets csv reader
 - [ ] Tickets database migration
 - [ ] Tickets database seed
+- [ ] Replace `0`s with `null` for airport coordinates
+- [ ] Replace `1970-01-01` with `null` for return dates
