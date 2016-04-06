@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 20160406120933) do
     t.string   "destination_continent"
     t.decimal  "paid_amount"
     t.string   "paid_currency"
-    t.decimal  "paid_amount_converted"
+    t.decimal  "paid_amount_converted",   precision: 10, scale: 2
     t.string   "ticket_type"
     t.integer  "flight_duration"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
   end
 
 end

@@ -19,7 +19,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string :destination_continent
       t.decimal :paid_amount
       t.string :paid_currency
-      t.decimal :paid_amount_converted
+      t.decimal :paid_amount_converted, {precision: 10, scale: 2}
       t.string :ticket_type
       t.integer :flight_duration
 
