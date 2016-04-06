@@ -38,15 +38,16 @@
 
 - [x] Airport model *(app/models/airport.rb)*
 - [x] Airport csv reader *(db/seeds.rb)*
-  - [x] user provided headers
-  - [x] "tt" separation regex
+- [x] user provided headers
+- [x] "tt" separation REGEX
 - [x] Airport database migration *(db/migrate/~)*
 - [x] Airport database seed *(db/seeds.rb)*
+- [x] Tickets model *(app/models/ticket.rb)*
+- [x] Tickets csv reader
+- [x] Tickets database migration *(db/migrate/~)*
+- [x] Tickets database seed *(db/seeds.rb)*
 
 ## Next to do
-- [ ] Tickets model
-- [ ] Tickets csv reader
-- [ ] Tickets database migration
-- [ ] Tickets database seed
+
 - [ ] Replace `0`s with `null` for airport coordinates
-- [ ] Replace `1970-01-01` with `null` for return dates
+- [ ] Replace `1970-01-01` with `null` for ticket return dates

@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itinerary_id: 1
+  market_id: 1
+  brand: MyString
+  purchase_date: 2016-04-06 14:09:33
+  departure_date: 2016-04-06
+  return_date: 2016-04-06
+  departure_city_tag: MyString
+  departure_city: MyString
+  departure_country: MyString
+  departure_country_tag: MyString
+  departure_continent: MyString
+  destination_city_tag: MyString
+  destination_city: MyString
+  destination_country: MyString
+  destination_country_tag: MyString
+  destination_continent: MyString
+  paid_amount: 9.99
+  paid_currency: MyString
+  paid_amount_converted: 9.99
+  ticket_type: MyString
+  flight_duration: 1
+
+two:
+  itinerary_id: 1
+  market_id: 1
+  brand: MyString
+  purchase_date: 2016-04-06 14:09:33
+  departure_date: 2016-04-06
+  return_date: 2016-04-06
+  departure_city_tag: MyString
+  departure_city: MyString
+  departure_country: MyString
+  departure_country_tag: MyString
+  departure_continent: MyString
+  destination_city_tag: MyString
+  destination_city: MyString
+  destination_country: MyString
+  destination_country_tag: MyString
+  destination_continent: MyString
+  paid_amount: 9.99
+  paid_currency: MyString
+  paid_amount_converted: 9.99
+  ticket_type: MyString
+  flight_duration: 1
