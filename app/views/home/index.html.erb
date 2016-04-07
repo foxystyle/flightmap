@@ -14,16 +14,23 @@
         md-disable-backdrop
         md-whiteframe="4"
     >
-      <md-input-container>
-        <md-button class="md-primary md-raised" id="info-button" aria-label="Info">
-          <i class="medium-icon ion-information"></i>
-        </md-button>
-        <h1>Flightmap</h1>
-      </md-input-container>
-      <strong>Current location:</strong>
-      <md-input-container class="md-icon-float md-block">
+      <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+            <md-icon md-svg-icon="<%= image_path('ic_flight_white_36px.svg') %>"></md-icon>
+          </md-button>
+          <h1>
+            <span>Flightmap</span>
+          </h1>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="<%= image_path('ic_info_outline_white_36px.svg') %>"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+        <strong class="input-heading">Current location:</strong>
+      <md-input-container class="md-icon-float md-block input-margin">
       <label>Airport, city, country</label>
-      <md-icon md-svg-src="<%= image_path('ic_place_black_24px.svg') %>" class="name"></md-icon>
       <input ng-model="user.name" type="text">
     </md-input-container>
     </md-sidenav>
