@@ -6,7 +6,7 @@
   $ ruby -v
   ```
 
-2. Install Rails on your machine, should be >= 4.2.2
+2. Install Rails on your machine, should be ~= 4.2.2
 
   ```
   $ gem install rails

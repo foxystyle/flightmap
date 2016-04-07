@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular/angular
+//= require angular-route/angular-route
+//= require angular-rails-templates
+//= require angular-aria
+//= require angular-animate
+//= require angular-material
 //= require_tree .
