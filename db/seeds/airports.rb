@@ -27,9 +27,13 @@ airports.each do |item|
     coordinate_x: item[:coordinate_x],
     coordinate_y: item[:coordinate_y]
   )
+
+  puts "Seeding airport id: #{item[:airport_id]}"
   airport.save
 end
 
 # Coordinates nullify
 Airport.where(coordinate_x: 0).update_all(coordinate_x: nil)
 Airport.where(coordinate_y: 0).update_all(coordinate_y: nil)
+# City nullify
+Airport.where(city: '\N').update_all(city: nil)

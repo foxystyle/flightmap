@@ -48,7 +48,6 @@
 - [x] Tickets database seed
 - [x] Replace `0`s with `null` for airport coordinates
 - [x] Replace `1970-01-01` with `null` for ticket return dates
+- [x] Replace `\N` with `null` for airport cities
 
 ## Next to do
-
-- [ ] Replace `\N` with `null` for airport cities

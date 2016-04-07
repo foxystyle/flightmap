@@ -53,6 +53,7 @@ tickets.each do |item|
     ticket_type: item[:ticket_type],
     flight_duration: item[:flight_duration]
   )
+  puts "Seeding ticket id: #{item[:itinerary_id]}..."
   ticket.save
 end
 
