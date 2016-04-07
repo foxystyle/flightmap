@@ -53,3 +53,4 @@
 ## Next to do
 
 - [ ] Create UI for options
+  - [ ] Try toolbar layout
