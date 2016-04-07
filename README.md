@@ -51,3 +51,5 @@
 - [x] Replace `\N` with `null` for airport cities
 
 ## Next to do
+
+- [ ] Create UI for options
