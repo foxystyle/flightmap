@@ -31,3 +31,14 @@ AppControllers.controller('DialogCtrl', function($scope, $mdDialog) {
     );
   };
 });
+
+
+AppControllers.controller('DepartureLocationCtrl', [
+  '$scope','$http',
+  function($scope,$http){
+    $http.get('localhost:3000/airports').success(function(data){
+      $scope.departureLocations = data;
+      console.log(data);
+    });
+  }
+]);

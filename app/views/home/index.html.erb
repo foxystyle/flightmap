@@ -31,14 +31,17 @@
         </div>
       </md-toolbar>
 <%################################################################### OPTIONS %>
-      <div class="input-container">
+<%################################################ OPTIONS/DEPARTURE LOCATION %>
+      <div class="input-container" ng-controller="DepartureLocationCtrl">
         <span>Mjesto polaska:</span>
         <input type="text" placeholder="zračna luka, grad, država">
       </div>
+<%############################################################ OPTIONS/BUDGET %>
       <md-input-container class="slider-container">
         <span>Budžet: </span>
         <div id="budget-range"></div>
       </md-input-container>
+<%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
         <div class="input-dual-inner">
           <span>Broj osoba:</span>
@@ -53,6 +56,7 @@
           </select>
         </div>
       </div>
+<%#################################################### OPTIONS/DEPARTURE DATE %>
       <div class="input-dual">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
@@ -71,6 +75,7 @@
           </select>
         </div>
       </div>
+<%################################################### OPTIONS/FLIGHT DURATION %>
       <md-input-container class="slider-container">
         <span>Trajanje putovanja:</span>
         <div id="duration-range"></div>
@@ -83,8 +88,6 @@
       layout-padding
     >
       <div class="">
-        <%= request.location.ip %>
-        <%= request.location.city %>
         <%# main content (map) will go here %>
       </div>
     </md-content>
