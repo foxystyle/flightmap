@@ -3,8 +3,8 @@ var myarr;
 myarr = [
   {
     id: 1,
-    startValue: 200,
-    endValue: 800,
+    startValue: 2000,
+    endValue: 8000,
     color: "rgb(27, 64, 194)",
     //startAt: "2015-03-22 00:00",
     //endAt: "2015-03-22 23:59"
@@ -33,13 +33,13 @@ $(function() {
 });
 
 
-var myarr;
+var duration_array;
 
-myarr = [
+duration_array = [
   {
     id: 1,
-    startValue: 200,
-    endValue: 800,
+    startValue: 5,
+    endValue: 25,
     color: "rgb(27, 64, 194)",
     //startAt: "2015-03-22 00:00",
     //endAt: "2015-03-22 23:59"
@@ -62,7 +62,7 @@ $(function() {
   };
   $('#duration-range').rangeSlider({
     min: 0,
-    max: 10000,
-    ranges: myarr
+    max: 30,
+    ranges: duration_array
   });
 });
