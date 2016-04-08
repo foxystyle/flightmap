@@ -27,7 +27,7 @@ $(function() {
   };
   $('#budget-range').rangeSlider({
     min: 0,
-    max: 1000,
+    max: 10000,
     ranges: myarr
   });
 });
@@ -62,7 +62,7 @@ $(function() {
   };
   $('#duration-range').rangeSlider({
     min: 0,
-    max: 1000,
+    max: 10000,
     ranges: myarr
   });
 });
