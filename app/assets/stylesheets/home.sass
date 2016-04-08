@@ -1,6 +1,10 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
 html
   height: 100%
 body
@@ -9,6 +13,7 @@ body
   height: 100%
 #sidebar
   width: 600px
+  overflow: visible
   #sidebar-container
     padding: 20px
   h1
@@ -29,3 +34,58 @@ body
   margin-left: 5px
 .input-margin
   margin: inherit 10px
+.slider-container
+  padding: 20px
+  span
+    display: inline-block
+    margin-bottom: 10px
+    font-weight: 700
+  overflow: visible
+.range-label
+  width: 100% !important
+  top: 20px !important
+  background: none !important
+  white-space: nowrap !important
+.range-handler-1
+  width: 15px !important
+.input-container
+  padding: 20px
+  margin-bottom: -10px
+  span
+    display: block
+    font-weight: 700
+    margin-bottom: 10px
+  input[type="text"]
+    width: 100%
+    background: #fff
+    border: 1px solid #aaa
+    border-radius: 3px
+    color: #000
+    padding: 10px
+    font-size: 16px
+.input-dual
+  .input-dual-inner
+    padding: 20px
+    width: 50%
+    float: left
+    text-align: center
+    &:nth-child(2n+2)
+      margin-left: -10px
+    span
+      text-align: left
+      display: block
+      font-weight: 700
+      margin-bottom: 10px
+    input, select
+      width: 100%
+      background: #fff
+      color: #000
+      border: 1px solid #aaa
+      border-radius: 3px
+      padding: 10px
+    select
+      padding: 10px
+      cursor: pointer
+      option
+        cursor: inherit
+        padding-left: 10px

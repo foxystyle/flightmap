@@ -6,6 +6,7 @@
   ng-cloak
 >
   <section layout="row" flex>
+<%################################################################### SIDEBAR %>
     <md-sidenav
         id="sidebar"
         class="md-sidenav-left"
@@ -14,6 +15,7 @@
         md-disable-backdrop
         md-whiteframe="4"
     >
+<%################################################################### TOOLBAR %>
       <md-toolbar ng-controller="DialogCtrl" class="md-hue-2">
         <div class="md-toolbar-tools">
           <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -28,11 +30,54 @@
           </md-button>
         </div>
       </md-toolbar>
-      <md-input-container class="md-icon-float md-block input-margin">
-      <label>Mjesto polaska</label>
-      <input ng-model="user.name" type="text">
-    </md-input-container>
+<%################################################################### OPTIONS %>
+      <div class="input-container">
+        <span>Mjesto polaska:</span>
+        <input type="text" placeholder="zračna luka, grad, država">
+      </div>
+      <md-input-container class="slider-container">
+        <span>Budžet: </span>
+        <div id="budget-range"></div>
+      </md-input-container>
+      <div class="input-dual">
+        <div class="input-dual-inner">
+          <span>Broj osoba:</span>
+          <input type="number">
+        </div>
+        <div class="input-dual-inner">
+          <span>Valuta:</span>
+          <select>
+            <option>option</option>
+            <option>option</option>
+            <option>option</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-dual">
+        <div class="input-dual-inner">
+          <span>Datum polaska:</span>
+          <select>
+            <option>option</option>
+            <option>option</option>
+            <option>option</option>
+          </select>
+        </div>
+        <div class="input-dual-inner">
+          <span style="opacity: 0; cursor: default">.</span>
+          <select>
+            <option>option</option>
+            <option>option</option>
+            <option>option</option>
+          </select>
+        </div>
+      </div>
+      <md-input-container class="slider-container">
+        <span>Trajanje putovanja:</span>
+        <div id="duration-range"></div>
+      </md-input-container>
+<%############################################################## END SIDEBAR  %>
     </md-sidenav>
+<%################################################################### CONTENT %>
     <md-content
       flex
       layout-padding
@@ -41,5 +86,6 @@
         <%# main content (map) will go here %>
       </div>
     </md-content>
+<%##########################################################################  %>
   </section>
 </div>

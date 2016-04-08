@@ -49,9 +49,8 @@
 - [x] Replace `0`s with `null` for airport coordinates
 - [x] Replace `1970-01-01` with `null` for ticket return dates
 - [x] Replace `\N` with `null` for airport cities
+- [x] Create UI for options
 
 ## Next to do
 
-- [ ] Create UI for options
-  - [x] Toolbar layout
-  - [x] Info dialog popup
+- [ ] Fetch data from database

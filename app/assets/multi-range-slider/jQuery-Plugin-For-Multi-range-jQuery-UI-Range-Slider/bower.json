@@ -1,0 +1,33 @@
+{
+  "name": "jquery-ui-range-slider",
+  "description": "jquery ui range slider",
+  "version": "0.1.0",
+  "homepage": "http://www.emilioforrer.com",
+  "main": [
+    "dist/jquery-ui-range-slider.min.js",
+    "dist/jquery-ui-range-slider.min.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilioforrer/jquery-ui-range-slider.git"
+  },
+  "keywords": [
+    "slider",
+    "multirange",
+    "range",
+    "jquery plugin"
+  ],
+  "author": {
+    "name": "Emilio Forrer",
+    "url": "http://www.emilioforrer.com"
+  },
+  "dependencies": {
+    "jquery": "^1.11.1",
+    "font-awesome": "4.2.0",
+    "jquery-ui": "~1.11.4"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.2.0"
+  },
+  "overrides": {}
+}

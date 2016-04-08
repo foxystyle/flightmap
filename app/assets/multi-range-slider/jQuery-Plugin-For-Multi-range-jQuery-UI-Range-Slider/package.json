@@ -1,0 +1,51 @@
+{
+  "name": "jquery-ui-range-slider",
+  "description": "jquery ui range slider",
+  "version": "0.1.0",
+  "style": "./dist/jquery-ui-range-slider.min.css",
+  "main": "./dist/jquery-ui-range-slider.min.js",
+  "homepage": "http://www.emilioforrer.com",
+  "author": {
+    "name": "Emilio Forrer",
+    "url": "http://www.emilioforrer.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilioforrer/jquery-ui-range-slider.git"
+  },
+  "keywords": [
+    "slider",
+    "multirange",
+    "range",
+    "jquery plugin"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/emilioforrer/jquery-ui-range-slider/blob/master/LICENSE.txt"
+  },
+  "scripts": {
+    "server": "grunt"
+  },
+  "dependencies": {
+    "bower": "~1.3.6",
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-jade": "~0.12.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-bower-task": "~0.4.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-es6-module-transpiler": "~0.6.0",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-compass": "~1.0.1",
+    "grunt": "~0.4.5"
+  }
+}

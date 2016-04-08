@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Range Slider</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link href="css/jquery-ui-range-slider.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js">       </script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js">      </script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">       </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+  </head>
+  <body>
+    <h1>jQuery UI Range Slider</h1>
+    <h3>Array of ranges passed to all instances</h3>
+    <pre>var myarr;
+
+  myarr = [
+    {
+      id: 1,
+      startValue: 480,
+      endValue: 720,
+      color: "#CF1920",
+      startAt: "2015-03-22 00:00",
+      endAt: "2015-03-22 23:59"
+    }, {
+      id: 2,
+      startValue: 810,
+      endValue: 950,
+      startAt: "2015-03-22 00:00",
+      endAt: "2015-03-22 23:59"
+    }
+  ];</pre>
+    <div id="container">
+      <div role="tabpanel">
+        <h2>DEFAULT</h2>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#default-html" data-toggle="tab">HTML</a></li>
+          <li><a href="#default-js" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="default-html" class="tab-pane active">
+            <div class="demo">
+              <div id="slider-range"></div>
+            </div>
+          </div>
+          <div id="default-js" class="tab-pane">
+            <div class="demo">
+              <pre>$('#slider-range').rangeSlider({
+  min: 0,
+  max: 1440,
+  ranges: myarr
+});</pre>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <h2>CUSTOM EVENT (rangeSlide)</h2>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#custom-event-html" data-toggle="tab">HTML</a></li>
+          <li><a href="#custom-event-js" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="custom-event-html" class="tab-pane active">
+            <div class="demo">
+              <div id="slider-range-timer"></div>
+              <div id="display-timer"></div>
+            </div>
+          </div>
+          <div id="custom-event-js" class="tab-pane">
+            <div class="demo">
+              <pre>var renderLabel;
+renderLabel = function(ui, customContent) {
+  var content, endAt, range, startAt;
+  if (customContent == null) {
+    customContent = false;
+  }
+  range = ui.range;
+  startAt = moment(range.startAt, "YYYY-MM-DD h:mm").add(range.startValue, "minutes");
+  endAt = moment(range.startAt, "YYYY-MM-DD h:mm").add(range.endValue, "minutes");
+  content = "" + (startAt.format("YYYY-MM-DD h:mm")) + " -- " + (endAt.format("YYYY-MM-DD h:mm"));
+  if (customContent) {
+    content = $("&lt;div style='left: -40px;position: absolute;'>" + (startAt.format("YYYY-MM-DD h:mm")) + "&lt;/div>&lt;div style='right: -40px;position: absolute;'>" + (endAt.format("YYYY-MM-DD h:mm")) + "&lt;/div>");
+  }
+  return content;
+};
+
+$('#slider-range-timer').rangeSlider({
+  min: 0,
+  max: 1440,
+  ranges: myarr,
+  rangeSlide: function(event, ui) {
+    return $("#display-timer").empty().append(renderLabel(ui));
+  }
+});
+
+</pre>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <h2>CUSTOM LABEL (rangeLabel)</h2>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#custom-label-html" data-toggle="tab">HTML</a></li>
+          <li><a href="#custom-label-js" data-toggle="tab">JS</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="custom-label-html" class="tab-pane active">
+            <div class="demo">
+              <div id="slider-range-custom-label"></div>
+              <div id="display-label-timer"></div>
+            </div>
+          </div>
+          <div id="custom-label-js" class="tab-pane">
+            <div class="demo"><code>
+                <pre>var renderLabel;
+renderLabel = function(ui, customContent) {
+  var content, endAt, range, startAt;
+  if (customContent == null) {
+    customContent = false;
+  }
+  range = ui.range;
+  startAt = moment(range.startAt, "YYYY-MM-DD h:mm").add(range.startValue, "minutes");
+  endAt = moment(range.startAt, "YYYY-MM-DD h:mm").add(range.endValue, "minutes");
+  content = "" + (startAt.format("YYYY-MM-DD h:mm")) + " -- " + (endAt.format("YYYY-MM-DD h:mm"));
+  if (customContent) {
+    content = $("&lt;div style='left: -40px;position: absolute;'>" + (startAt.format("YYYY-MM-DD h:mm")) + "&lt;/div>&lt;div style='right: -40px;position: absolute;'>" + (endAt.format("YYYY-MM-DD h:mm")) + "&lt;/div>");
+  }
+  return content;
+};
+
+$('#slider-range-custom-label').rangeSlider({
+  min: 0,
+  max: 1440,
+  ranges: myarr,
+  rangeLabel: function(event, ui) {
+    return ui.label.empty().append(renderLabel(ui, true));
+  },
+  rangeSlide: function(event, ui) {
+    return $("#display-label-timer").empty().append(renderLabel(ui));
+  }
+});
+</pre></code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-ui-range-slider.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
