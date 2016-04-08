@@ -36,9 +36,24 @@ AppControllers.controller('DialogCtrl', function($scope, $mdDialog) {
 AppControllers.controller('DepartureLocationCtrl', [
   '$scope','$http',
   function($scope,$http){
-    $http.get('localhost:3000/airports').success(function(data){
-      $scope.departureLocations = data;
-      console.log(data);
+    $http.get('/airports').then(function(response){
+      $scope.departureLocations = response.data;
+      $scope.showSuggestions();
     });
-  }
-]);
+    $scope.showSuggestions = function(){
+      console.log($scope.departureLocations.airports[2].city); // iterate this, and push to array below
+      $(function() {
+        var data = [
+          "item 1",
+          "item 2",
+          "item 3"
+        ];
+        $( "#departure-location" ).autocomplete({
+          source: function(request, response) {
+            var results = $.ui.autocomplete.filter(data, request.term);
+            response(results.slice(0, 20));
+          }
+        });
+      });
+    }
+}]);
