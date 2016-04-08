@@ -54,3 +54,4 @@
 
 - [ ] Create UI for options
   - [x] Toolbar layout
+  - [x] Info dialog popup

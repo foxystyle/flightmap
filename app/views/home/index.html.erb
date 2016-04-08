@@ -14,7 +14,7 @@
         md-disable-backdrop
         md-whiteframe="4"
     >
-      <md-toolbar class="md-hue-2">
+      <md-toolbar ng-controller="DialogCtrl" class="md-hue-2">
         <div class="md-toolbar-tools">
           <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
             <md-icon md-svg-icon="<%= image_path('ic_flight_white_36px.svg') %>"></md-icon>
@@ -23,14 +23,13 @@
             <span>Flightmap</span>
           </h1>
           <span flex></span>
-          <md-button class="md-icon-button" aria-label="Favorite">
+          <md-button class="md-icon-button" aria-label="Favorite" ng-click="openDialog()">
             <md-icon md-svg-icon="<%= image_path('ic_info_outline_white_36px.svg') %>"></md-icon>
           </md-button>
         </div>
       </md-toolbar>
-        <strong class="input-heading">Current location:</strong>
       <md-input-container class="md-icon-float md-block input-margin">
-      <label>Airport, city, country</label>
+      <label>Mjesto polaska</label>
       <input ng-model="user.name" type="text">
     </md-input-container>
     </md-sidenav>
