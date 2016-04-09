@@ -58,10 +58,13 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Departure location input suggests 20 items upon change
 - [x] Favicon
 - [x] Heroku production setup
+- [x] Ticket data API
+
 
 ## Next to do
 
-- [ ] Ticket data API
+- [ ] Cut date into pieces (before reaching frontend)
 - [ ] Currencies
 - [ ] Dates
 - [ ] Person count shouldn't be less than 1
+- [ ] Currency exchange rate API

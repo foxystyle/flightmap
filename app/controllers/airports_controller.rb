@@ -7,7 +7,11 @@ class AirportsController < ApplicationController
 
   def show
    @airport = Airport.find_by_id(params[:id])
-   render status:200, json: { airport_name: @airport.code, airport_city: @airport.city, airport_country: @airport.country }
+   render status:200, json: {
+     airport_name: @airport.code,
+     airport_city: @airport.city,
+     airport_country: @airport.country
+   }
   end
 
 end
