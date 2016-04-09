@@ -41,13 +41,15 @@ AppControllers.controller('DepartureLocationCtrl', [
       $scope.showSuggestions();
     });
     $scope.showSuggestions = function(){
-      console.log($scope.departureLocations.airports[2].city); // iterate this, and push to array below
       $(function() {
-        var data = [
-          "item 1",
-          "item 2",
-          "item 3"
-        ];
+        var data = [];
+        $.each($scope.departureLocations.airports, function(index, value){
+          if ($scope.departureLocations.airports[index].city) {
+            data.push($scope.departureLocations.airports[index].city + ", " + $scope.departureLocations.airports[index].country);
+          } else {
+            $scope.departureLocations.airports[index].country;
+          }
+        });
         $( "#departure-location" ).autocomplete({
           source: function(request, response) {
             var results = $.ui.autocomplete.filter(data, request.term);
