@@ -1,7 +1,17 @@
 class TicketsController < ApplicationController
 
   def index
-    @tickets = Ticket.select('departure_date')
+    @tickets = Ticket.select(
+      'id',
+      'departure_date',
+      'departure_country',
+      'departure_country_tag',
+      'destination_country',
+      'destination_country_tag',
+      'paid_amount',
+      'paid_currency',
+      'flight_duration'
+    )
     render status:200, json: { tickets: @tickets }
   end
 
