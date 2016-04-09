@@ -56,7 +56,12 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Create UI for options
 - [x] Departure location input linked to API from Rails
 - [x] Departure location input suggests 20 items upon change
+- [x] Favicon
+- [x] Heroku production setup
 
 ## Next to do
 
-- [ ] Fetch data from database  
+- [ ] Ticket data API
+- [ ] Currencies
+- [ ] Dates
+- [ ] Person count shouldn't be less than 1
