@@ -17,7 +17,9 @@ AppControllers.controller('SidebarCtrl', [
 
 
 
-AppControllers.controller('DialogCtrl', function($scope, $mdDialog) {
+AppControllers.controller('DialogCtrl', [
+  '$scope', '$mdDialog',
+  function($scope, $mdDialog) {
   $scope.openDialog = function() {
     $mdDialog.show(
       $mdDialog.alert()
@@ -30,7 +32,7 @@ AppControllers.controller('DialogCtrl', function($scope, $mdDialog) {
         .closeTo(angular.element(document.querySelector('#left')))
     );
   };
-});
+}]);
 
 
 AppControllers.controller('DepartureLocationCtrl', [
