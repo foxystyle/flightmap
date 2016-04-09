@@ -34,6 +34,10 @@
   $ rails s
   ```
 
+## Production preview
+
+Production preveiw on heroku - https://flightmap.herokuapp.com/
+
 ## Done
 
 - [x] Airport model *(app/models/airport.rb)*
@@ -50,6 +54,8 @@
 - [x] Replace `1970-01-01` with `null` for ticket return dates
 - [x] Replace `\N` with `null` for airport cities
 - [x] Create UI for options
+- [x] Departure location input linked to API from Rails
+- [x] Departure location input suggests 20 items upon change
 
 ## Next to do
 
