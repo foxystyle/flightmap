@@ -63,7 +63,7 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 ## Next to do
 
-- [ ] Cut date into pieces (before reaching frontend)
+- [ ] Cut date into pieces (on client side)
 - [ ] Currencies
 - [ ] Dates
 - [ ] Person count shouldn't be less than 1
