@@ -43,9 +43,9 @@
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
-        <div class="input-dual-inner" ng-controller="PersonCountCtrl">
+        <div class="input-dual-inner" > <%# ng-controller="PersonCountCtrl"%>
           <span>Broj osoba:</span>
-          <input type="number" value="1" onchange="limitPersonCount(this)">
+          <input type="number" value="1" > <%# onchange="limitPersonCount(this)"  %>
         </div>
         <div class="input-dual-inner" ng-controller="CurrencyCtrl">
           <span>Valuta:</span>
@@ -86,7 +86,6 @@
       layout-padding
     >
       <div>
-        Heroku test
         <%# main content (map) will go here %>
       </div>
     </md-content>
