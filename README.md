@@ -59,12 +59,11 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Favicon
 - [x] Heroku production setup
 - [x] Ticket data API
+- [x] Currencies API and dropdown
+- [x] Force limit for person count (1-100)
 
 
 ## Next to do
 
-- [ ] Cut date into pieces (on client side)
-- [ ] Currencies
 - [ ] Dates
-- [ ] Person count shouldn't be less than 1
 - [ ] Currency exchange rate API

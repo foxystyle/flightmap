@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   resources :airports
   resources :tickets
+  resources :currencies
+  resources :dates
 
 end

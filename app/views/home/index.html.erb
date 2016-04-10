@@ -43,16 +43,14 @@
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
-        <div class="input-dual-inner">
+        <div class="input-dual-inner" ng-controller="PersonCountCtrl">
           <span>Broj osoba:</span>
-          <input type="number">
+          <input type="number" value="1" onchange="limitPersonCount(this)">
         </div>
-        <div class="input-dual-inner">
+        <div class="input-dual-inner" ng-controller="CurrencyCtrl">
           <span>Valuta:</span>
           <select>
-            <option>option</option>
-            <option>option</option>
-            <option>option</option>
+            <option ng-repeat="currency in availableCurrencies">{{ currency }}</option>
           </select>
         </div>
       </div>

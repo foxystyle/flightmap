@@ -61,3 +61,32 @@ AppControllers.controller('DepartureLocationCtrl', [
       });
     }
 }]);
+
+
+AppControllers.controller('CurrencyCtrl', [
+  '$scope','$http',
+  function($scope,$http){
+    $http.get('/currencies').then(function(response){
+      $scope.availableCurrencies = response.data.currencies
+    })
+  }
+]);
+
+AppControllers.controller('PersonCountCtrl', [
+  '$scope',
+  function($scope){
+    limitPersonCount = function(input) {
+      if (input.value < 1) input.value = 1;
+      if (input.value > 100) input.value = 100;
+    }
+  }
+]);
+
+AppControllers.controller('DateCtrl', [
+  '$scope','$http'
+  function($scope, $http){
+    $http.get('/years').then(function(response){
+
+    })
+  }
+])
