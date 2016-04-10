@@ -83,7 +83,7 @@ AppControllers.controller('PersonCountCtrl', [
 ]);
 
 AppControllers.controller('DateCtrl', [
-  '$scope','$http'
+  '$scope','$http',
   function($scope, $http){
     $http.get('/years').then(function(response){
 
