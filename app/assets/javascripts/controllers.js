@@ -72,15 +72,15 @@ AppControllers.controller('CurrencyCtrl', [
   }
 ]);
 
-//AppControllers.controller('PersonCountCtrl', [
-//  '$scope',
-//  function($scope){
-//    limitPersonCount = function(input) {
-//      if (input.value < 1) input.value = 1;
-//      if (input.value > 100) input.value = 100;
-//    }
-//  }
-//]);
+AppControllers.controller('PersonCountCtrl', [
+  '$scope',
+  function($scope){
+    //limitPersonCount = function(input) {
+    //  if (input.value < 1) input.value = 1;
+    //  if (input.value > 100) input.value = 100;
+    //}
+  }
+]);
 
 AppControllers.controller('DateCtrl', [
   '$scope','$http',
