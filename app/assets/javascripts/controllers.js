@@ -84,8 +84,12 @@ AppControllers.controller('PersonCountCtrl', [
 AppControllers.controller('DateCtrl', [
   '$scope','$http',
   function($scope, $http){
-    $http.get('/years').then(function(response){
-      console.log('test');
+    $http.get('/dates').then(function(response){
+      $scope.years = response.data.years
+      $scope.months = []
+      for (var i = 0; i < 12; i++) {
+        $scope.months.push(response.data.months[i].name)
+      }
     })
   }
 ]);

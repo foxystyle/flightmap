@@ -59,17 +59,13 @@
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
           <select>
-            <option>option</option>
-            <option>option</option>
-            <option>option</option>
+            <option ng-repeat="year in years">{{year}}</option>
           </select>
         </div>
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
           <select>
-            <option>option</option>
-            <option>option</option>
-            <option>option</option>
+            <option ng-repeat="month in months">{{month}}</option>
           </select>
         </div>
       </div>
