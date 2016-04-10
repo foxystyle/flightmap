@@ -45,7 +45,7 @@
       <div class="input-dual">
         <div class="input-dual-inner" ng-controller="PersonCountCtrl">
           <span>Broj osoba:</span>
-          <input type="number" value="1" <onchange="limitPersonCount(this)">
+          <input type="number" value="1" onchange="limitPersonCount(this)">
         </div>
         <div class="input-dual-inner" ng-controller="CurrencyCtrl">
           <span>Valuta:</span>
@@ -55,7 +55,7 @@
         </div>
       </div>
 <%#################################################### OPTIONS/DEPARTURE DATE %>
-      <div class="input-dual">
+      <div class="input-dual" ng-controller="DateCtrl">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
           <select>
