@@ -31,8 +31,8 @@
         </div>
       </md-toolbar>
 <%################################################################### OPTIONS %>
-<%################################################ OPTIONS/DEPARTURE LOCATION %>
-      <div class="input-container" ng-controller="DepartureLocationCtrl">
+<%########################################################## OPTIONS/LOCATION %>
+      <div class="input-container">
         <span>Mjesto polaska:</span>
         <input
           id="departure-location"
@@ -48,7 +48,7 @@
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
-        <div class="input-dual-inner" ng-controller="PersonCountCtrl">
+        <div class="input-dual-inner">
           <span>Broj osoba:</span>
           <input
             type="number"
@@ -57,15 +57,15 @@
             value="1"
             >
         </div>
-        <div class="input-dual-inner" ng-controller="CurrencyCtrl">
+        <div class="input-dual-inner">
           <span>Valuta:</span>
           <select ng-model="selectedCurrency">
             <option ng-repeat="currency in availableCurrencies">{{ currency }}</option>
           </select>
         </div>
       </div>
-<%#################################################### OPTIONS/DEPARTURE DATE %>
-      <div class="input-dual" ng-controller="DateCtrl">
+<%############################################################## OPTIONS/DATE %>
+      <div class="input-dual">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
           <select ng-model="selectedYear" ng-options="year as year for year in years">
@@ -90,7 +90,29 @@
       layout-padding
     >
       <div ng-controller="DataOutput">
-        {{ selectedYear }}
+        <h1>Selected parameters</h1>
+        <table border="1">
+          <tr>
+            <th>Departure location</th>
+            <td>{{ selectedDepartureLocation }} </td>
+          </tr>
+          <tr>
+            <th>Person count</th>
+            <td>{{ selectedPersonCount }}</td>
+          </tr>
+          <tr>
+            <th>Currency</th>
+            <td>{{ selectedCurrency }}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{ selectedDate }}</td>
+            <td>
+              {{ selectedYear }} :
+              {{ selectedMonth }}
+            </td>
+          </tr>
+        </table>
       </div>
     </md-content>
 <%##########################################################################  %>
