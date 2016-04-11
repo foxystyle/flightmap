@@ -34,7 +34,12 @@
 <%################################################ OPTIONS/DEPARTURE LOCATION %>
       <div class="input-container" ng-controller="DepartureLocationCtrl">
         <span>Mjesto polaska:</span>
-        <input id="departure-location" type="text" placeholder="zračna luka, grad, država">
+        <input
+          id="departure-location"
+          type="text"
+          placeholder="zračna luka, grad, država"
+          ng-model="selectedDepartureLocation"
+          >
       </div>
 <%############################################################ OPTIONS/BUDGET %>
       <md-input-container class="slider-container">
@@ -45,11 +50,16 @@
       <div class="input-dual">
         <div class="input-dual-inner" ng-controller="PersonCountCtrl">
           <span>Broj osoba:</span>
-          <input type="number" value="1" onchange="limitPersonCount(this)">
+          <input
+            type="number"
+            onchange="limitPersonCount(this)"
+            ng-model="selectedPersonCount"
+            value="1"
+            >
         </div>
         <div class="input-dual-inner" ng-controller="CurrencyCtrl">
           <span>Valuta:</span>
-          <select>
+          <select ng-model="selectedCurrency">
             <option ng-repeat="currency in availableCurrencies">{{ currency }}</option>
           </select>
         </div>
@@ -58,14 +68,12 @@
       <div class="input-dual" ng-controller="DateCtrl">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
-          <select>
-            <option ng-repeat="year in years">{{year}}</option>
+          <select ng-model="selectedYear" ng-options="year as year for year in years">
           </select>
         </div>
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
-          <select>
-            <option ng-repeat="month in months">{{month}}</option>
+          <select ng-model='selectedMonth' ng-options='month as month.name for month in months'>
           </select>
         </div>
       </div>
@@ -81,9 +89,8 @@
       flex
       layout-padding
     >
-      <div>
-        Heroku test
-        <%# main content (map) will go here %>
+      <div ng-controller="DataOutput">
+        {{ selectedYear }}
       </div>
     </md-content>
 <%##########################################################################  %>

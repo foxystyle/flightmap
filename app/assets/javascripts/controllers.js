@@ -69,15 +69,18 @@ AppControllers.controller('CurrencyCtrl', [
     $http.get('/currencies').then(function(response){
       $scope.availableCurrencies = response.data.currencies
     })
+    $scope.selectedCurrency = "HRK"
   }
 ]);
 
 AppControllers.controller('PersonCountCtrl', [
-  function(){
+  '$scope',
+  function($scope){
     limitPersonCount = function(input) {
       if (input.value < 1) input.value = 1;
       if (input.value > 100) input.value = 100;
     }
+    $scope.selectedPersonCount = 1
   }
 ]);
 
@@ -88,8 +91,18 @@ AppControllers.controller('DateCtrl', [
       $scope.years = response.data.years
       $scope.months = []
       for (var i = 0; i < 12; i++) {
-        $scope.months.push(response.data.months[i].name)
+        $scope.months.push(response.data.months[i])
       }
     })
   }
 ]);
+
+AppControllers.controller('DataOutput', [
+  '$scope','$http',
+   function($scope, $http){
+
+   }
+])
+
+AppControllers.service('myservice', function(){
+})
