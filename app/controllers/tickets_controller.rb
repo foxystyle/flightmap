@@ -10,6 +10,7 @@ class TicketsController < ApplicationController
       'destination_country_tag',
       'paid_amount',
       'paid_currency',
+      'paid_amount_converted',
       'flight_duration'
     )
     render status:200, json: { tickets: @tickets}

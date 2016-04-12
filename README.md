@@ -71,4 +71,8 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 ## Next to do
 
+- [ ] Calculated params
+- [ ] Display matching data
+- [ ] Interactive SVG Map to display data
+- [ ] Responsive versions
 - [ ] Currency exchange rate API

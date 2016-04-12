@@ -88,6 +88,7 @@ AppControllers.controller('DialogCtrl', [
 AppControllers.controller('DataOutput', [
   '$scope','$http',
   function($scope, $http){
+    //
     $scope.$watch('selectedYear', updateSelectedDate);
     $scope.$watch('selectedMonth', updateSelectedDate);
     function updateSelectedDate() {
@@ -95,4 +96,6 @@ AppControllers.controller('DataOutput', [
         $scope.selectedDate = $scope.selectedYear + "-" + $scope.selectedMonth.no;
       }
     }
+    //
+
 }]);
