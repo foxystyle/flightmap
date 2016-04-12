@@ -105,35 +105,34 @@
         <h1>Selected parameters</h1>
         <table border="1">
           <tr>
-            <th>Departure location</th>
+            <th>selectedDepartureLocation</th>
             <td>{{ selectedDepartureLocation }} </td>
           </tr>
           <tr>
-            <th>Budget</th>
+            <th>budget</th>
             <td>{{ budget.min }} - {{ budget.max}}</td>
           </tr>
           <tr>
-            <th>Person count</th>
+            <th>selectedPersonCount</th>
             <td>{{ selectedPersonCount }}</td>
           </tr>
           <tr>
-            <th>Currency</th>
+            <th>selectedCurrency</th>
             <td>{{ selectedCurrency }}</td>
           </tr>
           <tr>
-            <th>Date</th>
+            <th>selectedDate</th>
             <td>{{ selectedDate }}</td>
           </tr>
           <tr>
-            <th>Flight duration</th>
+            <th>flightDuration</th>
             <td>{{ flightDuration.min }} - {{ flightDuration.max }}</td>
           </tr>
         </table>
-        <%#########################  %>
-        <h1 style="margin-top: 25px">Calculated parameters</h1>
 
         <%#########################  %>
         <h1 style="margin-top: 25px">Matching data</h1>
+        {{ matchingData }}
 
       </div>
     </md-content>

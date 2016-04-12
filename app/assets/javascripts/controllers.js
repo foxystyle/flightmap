@@ -4,6 +4,7 @@ AppControllers.controller('MainCtrl',[
   '$scope','$http',
   function($scope, $http){
     // Departure location
+    $scope.selectedDepartureLocation = 'Zagreb, Croatia'; // THIS IS TEMPORARY
     $http.get('/airports').then(function(response){
       $scope.departureLocations = response.data;
       $scope.showSuggestions();
@@ -97,5 +98,43 @@ AppControllers.controller('DataOutput', [
       }
     }
     //
-
+    $scope.$watch('selectedDepartureLocation', updateOutputData);
+    $scope.$watch('budget.min', updateOutputData);
+    $scope.$watch('budget.max', updateOutputData);
+    $scope.$watch('selectedYear', updateOutputData);
+    $scope.$watch('selectedPersonCount', updateOutputData);
+    $scope.$watch('selectedCurrency', updateOutputData);
+    $scope.$watch('selectedYear', updateOutputData);
+    $scope.$watch('selectedMonth', updateOutputData);
+    $scope.$watch('flightDuration', updateOutputData);
+    function updateOutputData(){
+      $scope.matchingData = [];
+      $http.get('/tickets').then(function(response){
+        $scope.ticketData = response.data.tickets;
+        if ($scope.selectedDepartureLocation !== undefined) {
+          var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
+          var departureCityDigest = departureLocationDigest[0];
+          var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1];
+        }
+        for (var i = 0; i < $scope.ticketData.length; i++) {
+          if ($scope.ticketData[i].departure_country == departureCountryDigest) {
+            if ($scope.ticketData[i].departure_city == departureCityDigest) {
+              if (($scope.ticketData[i].paid_amount_converted * $scope.selectedPersonCount) > $scope.budget.min &&
+                 ($scope.ticketData[i].paid_amount_converted * $scope.selectedPersonCount) < $scope.budget.max) {
+                if ($scope.selectedYear !== undefined) {
+                  var dateDigest = $scope.ticketData[i].departure_date.split('-')
+                  var dateYearDigest = dateDigest[0]
+                  var dateMonthDigest = dateDigest[1]
+                  if ($scope.selectedYear == dateYearDigest) { // note: not same type
+                    if ($scope.selectedMonth.no == dateMonthDigest) {
+                      $scope.matchingData.push($scope.ticketData[i]);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+    }
 }]);

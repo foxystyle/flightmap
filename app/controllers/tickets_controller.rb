@@ -6,6 +6,7 @@ class TicketsController < ApplicationController
       'departure_date',
       'departure_country',
       'departure_country_tag',
+      'departure_city',
       'destination_country',
       'destination_country_tag',
       'paid_amount',
