@@ -1,4 +1,5 @@
 var Flightmap = angular.module('Flightmap', [
   'ngMaterial',
-  'AppControllers'
+  'AppControllers',
+  'ui-rangeSlider'
 ]);

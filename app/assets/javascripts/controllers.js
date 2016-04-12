@@ -45,6 +45,16 @@ AppControllers.controller('MainCtrl',[
         $scope.months.push(response.data.months[i])
       }
     });
+    // Budget
+    $scope.demo1 = {
+      min: 20,
+      max: 80
+    };
+    // Flight duration
+    $scope.demo2 = {
+      min: 20,
+      max: 80
+    };
 }]);
 
 AppControllers.controller('SidebarCtrl', [
@@ -77,10 +87,12 @@ AppControllers.controller('DialogCtrl', [
 
 AppControllers.controller('DataOutput', [
   '$scope','$http',
-   function($scope, $http){
-
-   }
-])
-
-AppControllers.service('myservice', function(){
-})
+  function($scope, $http){
+    $scope.$watch('selectedYear', updateSelectedDate);
+    $scope.$watch('selectedMonth', updateSelectedDate);
+    function updateSelectedDate() {
+      if ($scope.selectedMonth !== undefined) {
+        $scope.selectedDate = $scope.selectedYear + "-" + $scope.selectedMonth.no;
+      }
+    }
+}]);

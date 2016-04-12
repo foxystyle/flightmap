@@ -44,7 +44,13 @@
 <%############################################################ OPTIONS/BUDGET %>
       <md-input-container class="slider-container">
         <span>Budžet: </span>
-        <div id="budget-range"></div>
+        <div range-slider
+          min="0" max="100"
+          model-min="demo1.min"
+          model-max="demo1.max">
+        </div>
+        {{  demo1.min }}
+        {{ demo1.max}}
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
@@ -80,7 +86,13 @@
 <%################################################### OPTIONS/FLIGHT DURATION %>
       <md-input-container class="slider-container">
         <span>Trajanje putovanja:</span>
-        <div id="duration-range"></div>
+        <div range-slider
+          min="0" max="100"
+          model-min="demo2.min"
+          model-max="demo2.max">
+        </div>
+        {{  demo2.min }}
+        {{ demo2.max}}
       </md-input-container>
 <%############################################################## END SIDEBAR  %>
     </md-sidenav>
@@ -107,10 +119,6 @@
           <tr>
             <th>Date</th>
             <td>{{ selectedDate }}</td>
-            <td>
-              {{ selectedYear }} :
-              {{ selectedMonth }}
-            </td>
           </tr>
         </table>
       </div>

@@ -61,9 +61,12 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Ticket data API
 - [x] Currencies API and dropdown
 - [x] Force limit for person count (1-100)
+- [x] Dates API and dropdown
+- [x] Range sliders connected with Angular
+- [x] Display parameter data
 
 
 ## Next to do
 
-- [ ] Dates
+- [ ] Style new sliders
 - [ ] Currency exchange rate API
