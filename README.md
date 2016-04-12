@@ -69,4 +69,5 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 ## Next to do
 
 - [ ] Style new sliders
+- [ ] Display range slider params
 - [ ] Currency exchange rate API
