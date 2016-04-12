@@ -64,10 +64,11 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Dates API and dropdown
 - [x] Range sliders connected with Angular
 - [x] Display parameter data
+- [x] Style new sliders
+
 
 
 ## Next to do
 
-- [ ] Style new sliders
 - [ ] Display range slider params
 - [ ] Currency exchange rate API
