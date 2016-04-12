@@ -65,10 +65,10 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Range sliders connected with Angular
 - [x] Display parameter data
 - [x] Style new sliders
+- [x] Display range slider params
 
 
 
 ## Next to do
 
-- [ ] Display range slider params
 - [ ] Currency exchange rate API

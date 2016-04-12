@@ -46,14 +46,14 @@ AppControllers.controller('MainCtrl',[
       }
     });
     // Budget
-    $scope.demo1 = {
-      min: 20,
-      max: 80
+    $scope.budget = {
+      min: 0,
+      max: 10000
     };
     // Flight duration
-    $scope.demo2 = {
-      min: 20,
-      max: 80
+    $scope.flightDuration = {
+      min: 0,
+      max: 30
     };
 }]);
 

@@ -45,12 +45,12 @@
       <md-input-container class="slider-container">
         <span>Budžet: </span>
         <div range-slider
-          min="0" max="100"
-          model-min="demo1.min"
-          model-max="demo1.max">
+          min="0" max="10000"
+          model-min="budget.min"
+          model-max="budget.max">
         </div>
-        {{  demo1.min }}
-        {{ demo1.max}}
+        {{ budget.min }}
+        {{ budget.max }}
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
@@ -87,12 +87,12 @@
       <md-input-container class="slider-container">
         <span>Trajanje putovanja:</span>
         <div range-slider
-          min="0" max="100"
-          model-min="demo2.min"
-          model-max="demo2.max">
+          min="0" max="30"
+          model-min="flightDuration.min"
+          model-max="flightDuration.max">
         </div>
-        {{  demo2.min }}
-        {{ demo2.max}}
+        {{ flightDuration.min }}
+        {{ flightDuration.max }}
       </md-input-container>
 <%############################################################## END SIDEBAR  %>
     </md-sidenav>
@@ -109,6 +109,10 @@
             <td>{{ selectedDepartureLocation }} </td>
           </tr>
           <tr>
+            <th>Budget</th>
+            <td>{{ budget.min }} - {{ budget.max}}</td>
+          </tr>
+          <tr>
             <th>Person count</th>
             <td>{{ selectedPersonCount }}</td>
           </tr>
@@ -119,6 +123,10 @@
           <tr>
             <th>Date</th>
             <td>{{ selectedDate }}</td>
+          </tr>
+          <tr>
+            <th>Flight duration</th>
+            <td>{{ flightDuration.min }} - {{ flightDuration.max }}</td>
           </tr>
         </table>
       </div>
