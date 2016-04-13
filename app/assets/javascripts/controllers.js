@@ -125,7 +125,7 @@ AppControllers.controller('DataOutput', [
                 if ($scope.selectedYear !== undefined && $scope.selectedMonth !== undefined) {
                   var dateDigest = $scope.ticketData[i].departure_date.split('-')
                   var dateYearDigest = dateDigest[0]
-                  var dateMonthDigest = dateDigest[1]
+                  var dateMonthDigest = dateDigest[1] 
                   if ($scope.selectedYear == dateYearDigest) { // note: not same type
                     if ($scope.selectedMonth.no == dateMonthDigest) {
                       if ($scope.flightDuration.max > $scope.ticketData[i].flight_duration &&
