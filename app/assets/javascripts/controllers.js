@@ -106,7 +106,8 @@ AppControllers.controller('DataOutput', [
     $scope.$watch('selectedCurrency', updateOutputData);
     $scope.$watch('selectedYear', updateOutputData);
     $scope.$watch('selectedMonth', updateOutputData);
-    $scope.$watch('flightDuration', updateOutputData);
+    $scope.$watch('flightDuration.min', updateOutputData);
+    $scope.$watch('flightDuration.max', updateOutputData);
     function updateOutputData(){
       $scope.matchingData = [];
       $http.get('/tickets').then(function(response){
@@ -121,13 +122,16 @@ AppControllers.controller('DataOutput', [
             if ($scope.ticketData[i].departure_city == departureCityDigest) {
               if (($scope.ticketData[i].paid_amount_converted * $scope.selectedPersonCount) > $scope.budget.min &&
                  ($scope.ticketData[i].paid_amount_converted * $scope.selectedPersonCount) < $scope.budget.max) {
-                if ($scope.selectedYear !== undefined) {
+                if ($scope.selectedYear !== undefined && $scope.selectedMonth !== undefined) {
                   var dateDigest = $scope.ticketData[i].departure_date.split('-')
                   var dateYearDigest = dateDigest[0]
                   var dateMonthDigest = dateDigest[1]
                   if ($scope.selectedYear == dateYearDigest) { // note: not same type
                     if ($scope.selectedMonth.no == dateMonthDigest) {
-                      $scope.matchingData.push($scope.ticketData[i]);
+                      if ($scope.flightDuration.max > $scope.ticketData[i].flight_duration &&
+                          $scope.flightDuration.min < $scope.ticketData[i].flight_duration ) {
+                        $scope.matchingData.push($scope.ticketData[i]);
+                      }
                     }
                   }
                 }

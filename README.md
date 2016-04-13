@@ -66,15 +66,15 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [x] Display parameter data
 - [x] Style new sliders
 - [x] Display range slider params
+- [x] Calculate params
+- [x] Display matching data
 
 
 
 ## Next to do
 
-- [ ] Calculated params
-- [ ] Display matching data
 - [ ] Interactive SVG Map to display data
 - [ ] Responsive versions
-- [ ] Currency exchange rate API
 - [ ] Current location detector
-- [ ] Data per request rather than loading whole API all at once
+- [ ] Currency exchange rate API
+- [ ] Data per request rather than loading whole API all at once (maybe)
