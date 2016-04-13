@@ -100,39 +100,33 @@
     <md-content
       flex
       layout-padding
+      style="background: rgb(163, 190, 212); padding: 0"
     >
-      <div ng-controller="DataOutput">
-        <h1>Selected parameters</h1>
-        <table border="1">
-          <tr>
-            <th>selectedDepartureLocation</th>
-            <td>{{ selectedDepartureLocation }} </td>
-          </tr>
-          <tr>
-            <th>budget</th>
-            <td>{{ budget.min }} - {{ budget.max}}</td>
-          </tr>
-          <tr>
-            <th>selectedPersonCount</th>
-            <td>{{ selectedPersonCount }}</td>
-          </tr>
-          <tr>
-            <th>selectedCurrency</th>
-            <td>{{ selectedCurrency }}</td>
-          </tr>
-          <tr>
-            <th>selectedDate</th>
-            <td>{{ selectedDate }}</td>
-          </tr>
-          <tr>
-            <th>flightDuration</th>
-            <td>{{ flightDuration.min }} - {{ flightDuration.max }}</td>
-          </tr>
-        </table>
+      <div ng-controller="DataOutput" style="padding: 0">
+        <%# {{ matchingData }}  %>
+        
+        <script type="text/javascript">
+          jQuery(document).ready(function() {
+            jQuery('#vmap').vectorMap({
+              map: 'world_en',
+              backgroundColor: null,
+              borderColor: '#818181',
+              borderOpacity: 0.25,
+              borderWidth: 1,
+              color: 'rgb(225, 236, 235)',
+              enableZoom: true,
+              hoverColor: 'rgb(73, 132, 186)',
+              hoverOpacity: null,
+              normalizeFunction: 'linear',
+              scaleColors: ['#b6d6ff', '#005ace'],
+              selectedColor: 'rgb(59, 84, 212)',
+              selectedRegions: null,
+              showTooltip: true,
+             });
+          });
+        </script>
 
-        <%#########################  %>
-        <h1 style="margin-top: 25px">Matching data</h1>
-        {{ matchingData }}
+        <div id="vmap"></div>
 
       </div>
     </md-content>

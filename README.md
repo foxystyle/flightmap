@@ -78,6 +78,8 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 - [ ] Interactive SVG Map to display data
 - [ ] Responsive versions
+- [ ] Default value for all inputs
+- [ ] Null value
 - [ ] Current location detector
 - [ ] Currency exchange rate API
 - [ ] Data per request rather than loading whole API all at once (maybe)

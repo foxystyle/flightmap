@@ -5,10 +5,9 @@
   margin: 0
   padding: 0
   box-sizing: border-box
-html
+html, body
   height: 100%
-body
-  height: 100%
+  width: 100%
 .full-height
   height: 100%
 #sidebar
@@ -90,3 +89,17 @@ body
   -ms-transform: translateY(-4px)
   -moz-transform: translateY(-4px)
   transform: translateY(-4px)
+
+#vmap
+  width: calc(100vw - 500px)
+  height: 100vh
+@media only screen and (max-width: 1279px)
+  #vmap
+    width: 100vw
+.jqvmap-zoomin, .jqvmap-zoomout
+  background: #283593 !important
+  width: 25px !important
+  height: 25px !important
+  line-height: 20px !important
+.jqvmap-zoomout
+  transform: translateY(10px)
