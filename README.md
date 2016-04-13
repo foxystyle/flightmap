@@ -86,4 +86,5 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 ## Issues
 
-- [ ] Sometimes date dropdowns are not displayed
+- [ ] Sometimes date dropdowns & icons are not displayed.
+[Stackoverflow question.](http://stackoverflow.com/questions/36609675/angular-data-and-icons-are-gone-but-they-appear-again-after-page-refresh)
