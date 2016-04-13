@@ -38,6 +38,9 @@
 
 Production preveiw on heroku - https://flightmap.herokuapp.com/
 
+**Note:** Currently disabled.
+
+
 ## Done
 
 - [x] Airport model *(app/models/airport.rb)*
@@ -78,3 +81,7 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [ ] Current location detector
 - [ ] Currency exchange rate API
 - [ ] Data per request rather than loading whole API all at once (maybe)
+
+## Issues
+
+- [ ] Sometimes date dropdowns are not displayed
