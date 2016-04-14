@@ -76,8 +76,10 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 ## Next to do
 
+- [ ] Map colors
 - [ ] Interactive SVG Map to display data
 - [ ] Responsive versions
+- [ ] Range slider values layout
 - [ ] Default value for all inputs
 - [ ] Null value
 - [ ] Current location detector
