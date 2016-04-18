@@ -39,6 +39,7 @@
           type="text"
           placeholder="zračna luka, grad, država"
           ng-model="selectedDepartureLocation"
+          ng-change="updateOutputData()"
           >
       </div>
 <%############################################################ OPTIONS/BUDGET %>
@@ -47,7 +48,8 @@
         <div range-slider
           min="0" max="10000"
           model-min="budget.min"
-          model-max="budget.max">
+          model-max="budget.max"
+          >
         </div>
         {{ budget.min }}
         {{ budget.max }}
@@ -74,12 +76,12 @@
       <div class="input-dual">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
-          <select ng-model="selectedYear" ng-options="year as year for year in years">
+          <select ng-model="selectedYear" ng-options="year as year for year in years" ng-change="updateSelectedDate()">
           </select>
         </div>
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
-          <select ng-model='selectedMonth' ng-options='month as month.name for month in months'>
+          <select ng-model='selectedMonth' ng-options='month as month.name for month in months' ng-change="updateSelectedDate()">
           </select>
         </div>
       </div>
@@ -102,7 +104,7 @@
       flex
       layout-padding
     >
-      <div ng-controller="DataOutput" style="padding: 0">
+      <div style="padding: 0">
         {{ matchingData }}
 
       <%#  <script type="text/javascript">

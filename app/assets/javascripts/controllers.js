@@ -51,12 +51,40 @@ AppControllers.controller('MainCtrl',[
       min: 0,
       max: 10000
     };
+    $scope.$watch('budget.min', updateOutput);
+    $scope.$watch('budget.max', updateOutput);
     // Flight duration
     $scope.flightDuration = {
       min: 0,
       max: 30
     };
-}]);
+    $scope.$watch('flightDuration.min', updateOutput);
+    $scope.$watch('flightDuration.max', updateOutput);
+    //
+    $scope.updateSelectedDate = function() {
+      console.log("update selected date");
+      if ($scope.selectedMonth !== undefined) {
+        $scope.selectedDate = $scope.selectedYear + "-" + $scope.selectedMonth.no;
+      }
+    };
+    //
+    function updateOutput(){
+      $scope.updateOutputData();
+    }
+    $scope.updateOutputData = function(){
+      $scope.matchingData = [];
+      $http.get('/tickets').then(function(response){
+        $scope.ticketData = response.data.tickets;
+        if ($scope.selectedDepartureLocation !== undefined) {
+          var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
+          var departureCityDigest = departureLocationDigest[0];
+          var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1];
+        }
+      });
+      //
+    };//end method
+    //
+}]);//end ctrl
 
 AppControllers.controller('SidebarCtrl', [
   '$scope', '$timeout', '$mdSidenav', '$log', '$http',
@@ -84,30 +112,4 @@ AppControllers.controller('DialogCtrl', [
         .closeTo(angular.element(document.querySelector('#left')))
     );
   };
-}]);
-
-AppControllers.controller('DataOutput', [
-  '$scope','$http',
-  function($scope, $http){
-    //
-    $scope.$watch('selectedYear', updateSelectedDate);
-    $scope.$watch('selectedMonth', updateSelectedDate);
-    function updateSelectedDate() {
-      if ($scope.selectedMonth !== undefined) {
-        $scope.selectedDate = $scope.selectedYear + "-" + $scope.selectedMonth.no;
-      }
-    }
-    //
-    function updateOutputData(){
-      $scope.matchingData = [];
-      $http.get('/tickets').then(function(response){
-        $scope.ticketData = response.data.tickets;
-        if ($scope.selectedDepartureLocation !== undefined) {
-          var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
-          var departureCityDigest = departureLocationDigest[0];
-          var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1];
-        }
-      });
-    }
-    //
 }]);
