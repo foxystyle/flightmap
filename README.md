@@ -38,7 +38,7 @@
 
 Production preveiw on heroku - https://flightmap.herokuapp.com/
 
-**Note:** Currently disabled.
+**Note:**: This preview might not always work properly due to heroku account service limitations.
 
 
 ## Done
