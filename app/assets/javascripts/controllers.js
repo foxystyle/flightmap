@@ -42,7 +42,7 @@ AppControllers.controller('MainCtrl',[
     $http.get('/dates').then(function(response){
       $scope.years = response.data.years
       $scope.months = []
-      for (var i = 0; i < 12; i++) {
+      for (var i = 0; i < response.data.months.length; i++) {
         $scope.months.push(response.data.months[i])
       }
     });
@@ -66,33 +66,27 @@ AppControllers.controller('MainCtrl',[
       $scope.updateOutputData();
     }
     $scope.updateOutputData = function(){
-      $scope.matchingData = [];
-       $http.get('/tickets').then(function(response){
-        $scope.ticketData = response.data.tickets;
-        if ($scope.selectedDepartureLocation !== undefined) {
-          var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
-          var departureCityDigest = departureLocationDigest[0]; // Returns City name
-          var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1]; // Returns Country name
-          if($scope.selectedYear == undefined) $scope.selectedYear = "*"; // sends string "*" to backend which represents "select all"
-          if($scope.selectedMonth == undefined) $scope.selectedMonth = "*";
-          // No slection object should be updated if deparute location is unset or not set properly
-          // Selection object is a object that contains all processed selection data
-          $scope.selectionObject = {
-            "departure_city" : departureCityDigest,
-            "departure_country" : departureCountryDigest,
-            "budget_min" : $scope.budget.min,
-            "budget_max" : $scope.budget.max,
-            "person_count" : $scope.selectedPersonCount,
-            "currency" : $scope.selectedCurrency,
-            "month" : $scope.selectedMonth,
-            "year" : $scope.selectedYear,
-            "flight_duration_min" : $scope.flightDuration.min,
-            "flight_duration_max" : $scope.flightDuration.max
-          };
-        }
-        //
-      });
-      //
+      if ($scope.selectedDepartureLocation !== undefined) {
+        var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
+        var departureCityDigest = departureLocationDigest[0]; // Returns City name
+        var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1]; // Returns Country name
+        if($scope.selectedYear == undefined) $scope.selectedYear = "*"; // sends string "*" to backend which represents "select all"
+        if($scope.selectedMonth == undefined) $scope.selectedMonth = "*";
+        // No slection object should be updated if deparute location is unset or not set properly
+        // Selection object is a object that contains all processed selection data
+        $scope.selectionObject = {
+          "departure_city" : departureCityDigest,
+          "departure_country" : departureCountryDigest,
+          "budget_min" : $scope.budget.min,
+          "budget_max" : $scope.budget.max,
+          "person_count" : $scope.selectedPersonCount,
+          "currency" : $scope.selectedCurrency,
+          "month" : $scope.selectedMonth.no,
+          "year" : $scope.selectedYear,
+          "flight_duration_min" : $scope.flightDuration.min,
+          "flight_duration_max" : $scope.flightDuration.max
+        };
+      } //end if
     };//end method
     //
 }]);//end ctrl

@@ -59,15 +59,16 @@
         <div class="input-dual-inner">
           <span>Broj osoba:</span>
           <input
+            ng-model="selectedPersonCount"
+            ng-change="updateOutputData()"
             type="number"
             onchange="limitPersonCount(this)"
-            ng-model="selectedPersonCount"
             value="1"
             >
         </div>
         <div class="input-dual-inner">
           <span>Valuta:</span>
-          <select ng-model="selectedCurrency">
+          <select ng-model="selectedCurrency" ng-change="updateOutputData()">
             <option ng-repeat="currency in availableCurrencies">{{ currency }}</option>
           </select>
         </div>
@@ -76,13 +77,20 @@
       <div class="input-dual">
         <div class="input-dual-inner">
           <span>Datum polaska:</span>
-          <select ng-model="selectedYear" ng-options="year as year for year in years" ng-change="updateSelectedDate()">
+          <select
+            ng-model="selectedYear"
+            ng-options="year as year for year in years"
+            ng-change="updateSelectedDate(); updateOutputData()">
+            <option value="">- Neodređeno -</option>
           </select>
         </div>
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
-          <select ng-model='selectedMonth' ng-options='month as month.name for month in months' ng-change="updateSelectedDate()">
-            </option>
+          <select
+            ng-model='selectedMonth'
+            ng-options='month as month.name for month in months'
+            ng-change="updateSelectedDate(); updateOutputData()">
+            <option value="">- Neodređeno -</option>
           </select>
         </div>
       </div>
@@ -100,12 +108,8 @@
 <%############################################################## END SIDEBAR  %>
     </md-sidenav>
 <%################################################################### CONTENT %>
-    <md-content
-      id="main-content"
-      flex
-      layout-padding
-    >
-      <div style="padding: 0">
+    <md-content id="main-content" flex>
+      <div>
         <div style="background: rgb(5, 13, 40); color: rgb(79, 194, 98); padding: 10px; width: 400px; overflow: auto;">
             {{ selectionObject.departure_city }} <br />
             {{ selectionObject.departure_country }} <br />
@@ -135,7 +139,7 @@
               scaleColors: ['#b6d6ff', '#005ace'],
               selectedColor: '#000',
               selectedRegions: null,
-              showTooltip: true,
+              showTooltip: true
              });
           });
         </script>

@@ -76,6 +76,7 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 
 ## Next to do
 
+- [ ] Data per request rather than loading whole API all at once
 - [ ] Map colors
 - [ ] Interactive SVG Map to display data
 - [ ] Responsive versions
@@ -84,9 +85,7 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 - [ ] Null value
 - [ ] Current location detector
 - [ ] Currency exchange rate API
-- [ ] Data per request rather than loading whole API all at once (maybe)
 
-## Issues
+## Notes
 
-- [ ] Sometimes date dropdowns & icons are not displayed.
-[Stackoverflow question.](http://stackoverflow.com/questions/36609675/angular-data-and-icons-are-gone-but-they-appear-again-after-page-refresh)
+- It would be good to separate data into multiple tables for better performance (e.g. table for each departure location)
