@@ -82,6 +82,7 @@
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
           <select ng-model='selectedMonth' ng-options='month as month.name for month in months' ng-change="updateSelectedDate()">
+            </option>
           </select>
         </div>
       </div>
@@ -105,7 +106,18 @@
       layout-padding
     >
       <div style="padding: 0">
-        {{ matchingData }}
+        <div style="background: rgb(5, 13, 40); color: rgb(79, 194, 98); padding: 10px; width: 400px; overflow: auto;">
+            {{ selectionObject.departure_city }} <br />
+            {{ selectionObject.departure_country }} <br />
+            {{ selectionObject.budget_min }} <br />
+            {{ selectionObject.budget_max }} <br />
+            {{ selectionObject.person_count }} <br />
+            {{ selectionObject.currency }} <br />
+            {{ selectionObject.month }} <br />
+            {{ selectionObject.year }} <br />
+            {{ selectionObject.flight_duration_min }} <br />
+            {{ selectionObject.flight_duration_max }}
+        </div>
 
       <%#  <script type="text/javascript">
           jQuery(document).ready(function() {
