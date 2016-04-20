@@ -150,8 +150,8 @@ AppControllers.controller('DialogCtrl', [
     $mdDialog.show(
       $mdDialog.alert()
         .clickOutsideToClose(true)
-        .title('Informacija o podacima')
-        .textContent('Navedeni podaci su povijesni. flightmap4.me ne preuzimaju odgovornost za njihovo korištenje prilikom donošenja odluke o rezervaciji ili kupnji aviokarte. Cijena aviokarte ovisi o trenutnoj raspoloživosti na pojedinom letu. Finalna cijena aviokarte vidljiva je na trećem koraku rezervacijskog procesa.')
+        .title('Podaci')
+        .textContent('Trenutno jedino podrzano mjesto polaska je Zagreb.')
         .ariaLabel('Info dialog')
         .ok('Zatvori')
         .openFrom('#left')
