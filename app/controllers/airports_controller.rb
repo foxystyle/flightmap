@@ -1,7 +1,7 @@
 class AirportsController < ApplicationController
 
   def index
-    @airports = Airport.select('id,city,country,country_code')
+    @airports = Airport.select('id,code,city,country,country_code' )
     render status:200, json: { airports: @airports }
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406120933) do
+ActiveRecord::Schema.define(version: 20160420013248) do
 
   create_table "airports", force: :cascade do |t|
     t.integer  "airport_id"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(version: 20160406120933) do
     t.decimal  "coordinate_y", precision: 10, scale: 6
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "selected_data", force: :cascade do |t|
+    t.string   "departure_city"
+    t.string   "departure_country"
+    t.integer  "budget_min"
+    t.integer  "budget_max"
+    t.integer  "person_count"
+    t.string   "currency"
+    t.string   "month"
+    t.string   "year"
+    t.integer  "flight_duartion_min"
+    t.integer  "flight_duration_max"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "tickets", force: :cascade do |t|

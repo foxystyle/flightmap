@@ -14,7 +14,9 @@ AppControllers.controller('MainCtrl',[
         var data = [];
         $.each($scope.departureLocations.airports, function(index, value){
           if ($scope.departureLocations.airports[index].city) {
-            data.push($scope.departureLocations.airports[index].city + ", " + $scope.departureLocations.airports[index].country);
+            data.push($scope.departureLocations.airports[index].city +
+                      $scope.departureLocations.airports[index].code + ", " +
+                      ", " + $scope.departureLocations.airports[index].country);
           } else {
             $scope.departureLocations.airports[index].country;
           }
@@ -66,12 +68,15 @@ AppControllers.controller('MainCtrl',[
       $scope.updateOutputData();
     }
     $scope.updateOutputData = function(){
+      $scope.outputData = [];
+      // If departure date is selected
+      //
       if ($scope.selectedDepartureLocation !== undefined) {
         var departureLocationDigest = $scope.selectedDepartureLocation.split(', ');
         var departureCityDigest = departureLocationDigest[0]; // Returns City name
         var departureCountryDigest = departureLocationDigest[departureLocationDigest.length-1]; // Returns Country name
-        if($scope.selectedYear == undefined) $scope.selectedYear = "*"; // sends string "*" to backend which represents "select all"
-        if($scope.selectedMonth == undefined || $scope.selectedMonth.no == undefined) $scope.selectedMonth = "*";
+        //if($scope.selectedYear == undefined) $scope.selectedYear = "*"; // sends string "*" to backend which represents "select all"
+        //if($scope.selectedMonth == undefined || $scope.selectedMonth.no == undefined) $scope.selectedMonth = "*";
         // Selection object is a object that contains all processed selection data
         $scope.selectionObject = {
           "departure_city" : departureCityDigest,
@@ -85,10 +90,40 @@ AppControllers.controller('MainCtrl',[
           "flight_duration_min" : $scope.flightDuration.min,
           "flight_duration_max" : $scope.flightDuration.max
         };
+        //
+        $http.get('/tickets').then(function(response){
+          for (var i = 0; i < response.data.tickets.length; i++) {
+            // First check if departure city from object matches departure city from selection
+            if(response.data.tickets[i].departure_city == departureCityDigest){
 
-        // at this point selectionObject should be sent to backend
-        // afterwards, backend should return API
+              // See if it matches budget range
+              if(
+                  (response.data.tickets[i].paid_amount_converted * $scope.selectedPersonCount) < $scope.budget.max &&
+                  (response.data.tickets[i].paid_amount_converted * $scope.selectedPersonCount) > $scope.budget.min
+                ) {
 
+                  // See if it matches flight duration range
+                  if(
+                    response.data.tickets[i].flight_duration < $scope.flightDuration.max &&
+                    response.data.tickets[i].flight_duration > $scope.flightDuration.min
+                  ){
+
+                    // Check if date is selected
+                    if($scope.selectedMonth == undefined || $scope.selectedYear == undefined) {
+                      $scope.outputData.push(response.data.tickets[i].destination_country_tag);
+                    } else {
+                      if (response.data.tickets[i].departure_date.slice(0,7) == $scope.selectedYear+"-"+$scope.selectedMonth.no) {
+                        $scope.outputData.push(response.data.tickets[i].destination_country_tag);
+                      }
+                    }
+
+
+                   } // end if flight duration range
+                  } // end if budget range
+////////////////////////////////////////////////////////////////////
+            }// end if - departure city check
+          } // end for
+        }); // end func(get-response)
       } //end if
     };//end method
     //

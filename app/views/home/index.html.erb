@@ -81,7 +81,7 @@
             ng-model="selectedYear"
             ng-options="year as year for year in years"
             ng-change="updateSelectedDate(); updateOutputData()">
-            <option value="">- Neodređeno -</option>
+            <%#<option value="">- Neodređeno -</option>%>
           </select>
         </div>
         <div class="input-dual-inner">
@@ -90,7 +90,7 @@
             ng-model="selectedMonth"
             ng-options="month as month.name for month in months"
             ng-change="updateSelectedDate(); updateOutputData()">
-            <option value="">- Neodređeno -</option>
+            <%#<option value="">- Neodređeno -</option>%>
           </select>
         </div>
       </div>
@@ -110,7 +110,7 @@
 <%################################################################### CONTENT %>
     <md-content id="main-content" flex>
       <div>
-        <div style="background: rgb(5, 13, 40); color: rgb(79, 194, 98); padding: 10px; width: 400px; overflow: auto;">
+        <div style="background: rgb(5, 13, 40); color: rgb(79, 194, 98); padding: 10px; width: 100%; overflow: auto;">
             {{ selectionObject.departure_city }} <br />
             {{ selectionObject.departure_country }} <br />
             {{ selectionObject.budget_min }} <br />
@@ -121,6 +121,11 @@
             {{ selectionObject.year }} <br />
             {{ selectionObject.flight_duration_min }} <br />
             {{ selectionObject.flight_duration_max }}
+
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgb(79,194,98);">
+              <b>Possible countries to visit:</b><br />
+              {{ outputData }}
+            </div>
         </div>
 
       <%#  <script type="text/javascript">
