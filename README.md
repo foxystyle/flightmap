@@ -89,3 +89,4 @@ Production preveiw on heroku - https://flightmap.herokuapp.com/
 ## Notes
 
 - It would be good to separate data into multiple tables for better performance (e.g. table for each departure location)
+- Chrome departure location not working properly
