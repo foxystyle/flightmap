@@ -14,9 +14,9 @@ AppControllers.controller('MainCtrl',[
         var data = [];
         $.each($scope.departureLocations.airports, function(index, value){
           if ($scope.departureLocations.airports[index].city) {
-            data.push($scope.departureLocations.airports[index].city +
+            data.push($scope.departureLocations.airports[index].city + ", " +
                       $scope.departureLocations.airports[index].code + ", " +
-                      ", " + $scope.departureLocations.airports[index].country);
+                      $scope.departureLocations.airports[index].country);
           } else {
             $scope.departureLocations.airports[index].country;
           }
@@ -68,6 +68,7 @@ AppControllers.controller('MainCtrl',[
       $scope.updateOutputData();
     }
     $scope.updateOutputData = function(){
+      $(".jqvmap-region").css('fill','red');
       $scope.outputData = [];
       // If departure date is selected
       //
@@ -117,12 +118,14 @@ AppControllers.controller('MainCtrl',[
                       }
                     }
 
-
                    } // end if flight duration range
                   } // end if budget range
 ////////////////////////////////////////////////////////////////////
             }// end if - departure city check
           } // end for
+          for (var i = 0; i < $scope.outputData.length; i++) {
+            $("#jqvmap1_"+$scope.outputData[i].toLowerCase()).css('fill','blue');
+          }
         }); // end func(get-response)
       } //end if
     };//end method
