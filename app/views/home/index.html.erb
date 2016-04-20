@@ -87,8 +87,8 @@
         <div class="input-dual-inner">
           <span style="opacity: 0; cursor: default">.</span>
           <select
-            ng-model='selectedMonth'
-            ng-options='month as month.name for month in months'
+            ng-model="selectedMonth"
+            ng-options="month as month.name for month in months"
             ng-change="updateSelectedDate(); updateOutputData()">
             <option value="">- Neodređeno -</option>
           </select>
