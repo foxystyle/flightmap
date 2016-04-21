@@ -51,8 +51,10 @@
           model-max="budget.max"
           >
         </div>
-        {{ budget.min }} -
-        {{ budget.max }}
+        <div class="range-values">
+          {{ budget.min }} -
+          {{ budget.max }}
+        </div>
       </md-input-container>
 <%############################################ OPTIONS/PERSON COUNT, CURRENCY %>
       <div class="input-dual">
@@ -102,8 +104,10 @@
           model-min="flightDuration.min"
           model-max="flightDuration.max">
         </div>
-        {{ flightDuration.min }}
-        {{ flightDuration.max }}
+        <div class="range-values">
+          {{ flightDuration.min }} - 
+          {{ flightDuration.max }}
+        </div>
       </md-input-container>
 <%############################################################## END SIDEBAR  %>
     </md-sidenav>
