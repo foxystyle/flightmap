@@ -68,7 +68,7 @@ AppControllers.controller('MainCtrl',[
       $scope.updateOutputData();
     }
     $scope.updateOutputData = function(){
-      $(".jqvmap-region").css('fill','red');
+      $(".jqvmap-region").css('fill','rgb(140, 150, 170)');
       $scope.outputData = [];
       // If departure date is selected
       //
@@ -124,7 +124,7 @@ AppControllers.controller('MainCtrl',[
             }// end if - departure city check
           } // end for
           for (var i = 0; i < $scope.outputData.length; i++) {
-            $("#jqvmap1_"+$scope.outputData[i].toLowerCase()).css('fill','blue');
+            $("#jqvmap1_"+$scope.outputData[i].toLowerCase()).css('fill','#283593');
           }
         }); // end func(get-response)
       } //end if

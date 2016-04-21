@@ -10,6 +10,7 @@ html, body
   width: 100%
 .full-height
   height: 100%
+//====================================================================== Sidebar
 #sidebar
   width: 600px
   overflow: auto
@@ -28,6 +29,7 @@ html, body
   margin: 0
 .medium-icon
   font-size: 20px
+//======================================================================= Inputs
 .input-heading
   margin-top: 15px
   margin-left: 5px
@@ -89,7 +91,7 @@ html, body
   -ms-transform: translateY(-4px)
   -moz-transform: translateY(-4px)
   transform: translateY(-4px)
-
+//========================================================================== Map
 #vmap
   width: calc(100vw - 500px)
   height: 100vh
@@ -97,6 +99,7 @@ html, body
   #vmap
     width: 100vw
 .jqvmap-zoomin, .jqvmap-zoomout
+  box-shadow: 0px 0px 0px 1.5px rgba(255,255,255,1)
   background: #283593 !important
   width: 25px !important
   height: 25px !important
@@ -108,3 +111,5 @@ html, body
 
 .jqvmap-region
   transition: all 0.3s
+  &:hover
+    fill: rgb(50, 80, 180) !important
