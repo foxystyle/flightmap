@@ -120,7 +120,6 @@ AppControllers.controller('MainCtrl',[
 
                    } // end if flight duration range
                   } // end if budget range
-////////////////////////////////////////////////////////////////////
             }// end if - departure city check
           } // end for
           for (var i = 0; i < $scope.outputData.length; i++) {

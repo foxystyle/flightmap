@@ -20,10 +20,13 @@
   $ git clone https://github.com/kunokdev/flightmap
   ```
 
-4. Install gems, migrate database and seed it with data
+4. Install dependencies, migrate database and seed it with data
 
   ```
+  $ npm install -g bower
   $ bundle install
+  $ rake -T bower
+  $ rake bower:install
   $ rake db:migrate
   $ rake db:seed
   ```
